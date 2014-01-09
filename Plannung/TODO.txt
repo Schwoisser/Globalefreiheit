@@ -1,0 +1,7 @@
+TODO
+
+Mi
+-bitcoin ticker
+-js artikel loader
+-js mailto
+

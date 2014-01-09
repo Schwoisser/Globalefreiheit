@@ -1,0 +1,12 @@
+Anforderungen an Globale Freiheit V1
+
+-User sieht Artikel
+-User sieht unterschiedliche Kategorien von Artikeln
+-User kann per Email im Shop bestellen und mit Bitcoin bezahlen
+-Redakteur kann Artikel einbinden und der User kann diese dann sehen
+-User kann Artikel suchen
+-Es gibt mehrere Kategorien von Artikeln: Nachrichten, Musik, Bücher, Filme,
+Events
+-Es gibt eine Seite mit allen Autoren möglichst dynamisch generiert
+
+

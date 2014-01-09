@@ -1,0 +1,29 @@
+Artikel (abstrakter Gegenstand)
+Attribute:
+ beschreibung als HTML-Text
+ bild als Referenz auf ein Thumbnail
+ link als optionaler Verweis auf die Detailansicht
+Beschreibung:
+Abstrakte Oberklasse für Content zur Vereinfachung der Darstellung in der
+Listenansicht auf der Seite.
+
+Nachrichten (Gegenstand erbt von Artikel)
+Attribute:
+ text als HTML-Text
+ youtube_link als optionale Referenz auf ein Video zum Thema
+ author als Text
+
+Musik (Gegenstand erbt von Artikel)
+Attribute
+ text optionaler Beschreibungs HTML-Text
+ link oder download als Verweis auf das Musikstück 
+
+Buch (Gegenstand erbt von Artikel)
+ text als HTML-Text
+ author als Text
+
+Film (Gegenstand erbt von Artikel)
+ text als HTML-Text
+
+Event (Gegenstand erbt von Artikel)
+ text als HTML-Text 
