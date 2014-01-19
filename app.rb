@@ -12,8 +12,12 @@ set :database, 'sqlite3:///development.sqlite3.db'
 
 configure do
   ActiveRecord::Base.establish_connection(
-    :adapter => 'sqlite3',
-    :database => 'db/development.sqlite3')
+    :adapter  => "mysql2",
+    :host     => "localhost",
+    :username => "test",
+    :password => "test",
+    :database => "Globalefreiheit"
+  )
 end
 
 
