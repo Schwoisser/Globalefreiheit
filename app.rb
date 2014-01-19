@@ -23,7 +23,7 @@ end
 
 
 get '/' do
-  @article =  Article.first(7)
+  @article =  Article.last(7)
   erb :index
 end
 
@@ -78,25 +78,4 @@ put '/article/:title' do
 end
 
 
-get "/article/create" do
-  article = Article.new
-  article.title = "test"
-  article.author = "test"
-  article.image = "130"
-  article.text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-    aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus 
-    est Lorem ipsum dolor sit amet."
-  article.description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
-  article.tag = "test"
-  article.save
-      
-  "created test article"
-end
+
