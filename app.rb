@@ -27,6 +27,12 @@ get '/' do
   erb :index
 end
 
+#goto page x 
+#incomplete query
+get '/:page'
+  @article = Article.last(7)
+  erb :article
+end
 get '/article/:title' do
   @article = Article.find_by_title(params[:title])
   erb :article #, (request.xhr? ? false : :layout) #just return the article without layout when its an ajax request
