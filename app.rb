@@ -29,7 +29,7 @@ end
 
 #goto page x 
 #incomplete query
-get '/page/:page'
+get '/page/:page' do
   @pagenumber = params[:page] - 1
   @article = Article.last
   @last_id = @article.ID
