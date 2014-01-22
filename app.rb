@@ -33,7 +33,7 @@ get '/page/:page' do
   @pagenumber = params[:page].to_i - 1
   @article = Article.last(2)
   @last_id = @article.first.ID.to_i
-  @article = Article.where("ID > ? AND ID < ?", @last_id - (@pagenumber*7) ,@last_id - (@pagenumber*7+7) )
+  @article = Article.where("ID < ? AND ID > ?", @last_id - (@pagenumber*7) ,@last_id - (@pagenumber*7+7) )
   erb :article
 end
 
