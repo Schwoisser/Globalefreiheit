@@ -29,10 +29,14 @@ end
 
 #goto page x 
 #incomplete query
-get '/:page'
-  @article = Article.last(7)
+get '/page/:page'
+  @pagenumber = params[:page] - 1
+  @article = Article.last
+  @last_id = @article.ID
+  @article = Article.where("ID > ? AND ID < ?", @last_id - (@pagenumber*7) ,@last_id - (@pagenumber*7+7) )
   erb :article
 end
+
 get '/article/:title' do
   @article = Article.find_by_title(params[:title])
   erb :article #, (request.xhr? ? false : :layout) #just return the article without layout when its an ajax request
