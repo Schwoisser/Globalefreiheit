@@ -30,9 +30,9 @@ end
 #goto page x 
 #incomplete query
 get '/page/:page' do
-  @pagenumber = params[:page] - 1
+  @pagenumber = params[:page].to_i - 1
   @article = Article.last
-  @last_id = @article.ID
+  @last_id = @article.ID.to_i
   @article = Article.where("ID > ? AND ID < ?", @last_id - (@pagenumber*7) ,@last_id - (@pagenumber*7+7) )
   erb :article
 end
