@@ -5,4 +5,7 @@ class Article < ActiveRecord::Base
   def page(page_nr)
   end
   
+  def rubrik(rubrik_name)
+  end
+  
 end
