@@ -62,7 +62,7 @@ get '/autoren' do
 end
 
 get '/partner' do
-  @authors = Author.find(:all, :order => "Name")
+  @authors = Author.all.order(:Name)
   erb :partner
 end
 
