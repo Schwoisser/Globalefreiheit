@@ -3,18 +3,15 @@
 	<% @article.each do |article|%>
 		<div id=<%=article.title %>>
 			<ul>
-			<li>
 				<a class="link" onclick="load_article('<%="article/"+article.title %>');" href="<%="article/"+article.title %>" title="<%article.title%>">
 				<img src="<%= "slider/"+article.Vorschaubildname %>">
-				<font size="3"><%=article.title %> </font> <br> 
-				<span style="font-weight: 400"><%article.author%><br>
+				<font size="3"><%=article.title %> </font>
+				<span style="font-weight: 400"><%article.author%>
 				<p>
 					<%=article.description %>
 				</p> 			
 				</span> 
 				</a>
-			</li>
-			<hr>
 			</ul>
 		</div>		
 	              
