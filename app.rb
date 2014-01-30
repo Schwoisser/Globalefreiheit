@@ -9,7 +9,6 @@ require './models/rubrik'
 
 set :environment, :production
 set :port, 80
-set :database, 'sqlite3:///development.sqlite3.db'
 
 configure do
   ActiveRecord::Base.establish_connection(
@@ -62,11 +61,11 @@ get '/links' do
 end
 
 get '/autoren' do
+  @authors = Author.all
   erb :autoren
 end
 
 get '/partner' do
-  @authors = Author.all
   erb :partner
 end
 
