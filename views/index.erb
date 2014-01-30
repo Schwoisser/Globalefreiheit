@@ -1,9 +1,7 @@
 <script type="text/javascript" language="javascript" src="<%= url('js/main.js') %>"></script>
 <span id="output">
 	<% @article.each do |article|%>
-	
-		<div class="title"> <%=article.title %></div> 
-			<div id=<%=article.title %>>
+		<div id=<%=article.title %>>
 			<ul>
 			<li>
 				<a class="link" onclick="load_article('<%="article/"+article.title %>');" href="<%="article/"+article.title %>" title="<%article.title%>">
