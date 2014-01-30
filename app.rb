@@ -44,10 +44,14 @@ get '/article/:title' do
 end
 
 get '/author/:author_id' do
- @article = Article.find_by_author(params[:author_id])
+ @article = Article.where(author: params[:author_id])
  erb :index
 end
 
+get '/rubriken'
+ @rubriken = Rubrik.all
+ erb :rubriken
+end
 
 get '/willkommen' do
   erb :willkommen
