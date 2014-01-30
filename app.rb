@@ -4,7 +4,8 @@ require "active_record"
 require "sinatra/activerecord"
 
 require './models/article'
-
+require './models/author'
+require './models/rubrik'
 
 set :environment, :production
 set :port, 80
@@ -42,6 +43,11 @@ get '/article/:title' do
   erb :article #, (request.xhr? ? false : :layout) #just return the article without layout when its an ajax request
 end
 
+get '/author/:author_id' do
+ @article = Article.find_by_author(params[:author_id])
+ erb :index
+end
+
 
 get '/willkommen' do
   erb :willkommen
@@ -56,6 +62,7 @@ get '/autoren' do
 end
 
 get '/partner' do
+  @authors = Author.find(:all, :order => "Name")
   erb :partner
 end
 
