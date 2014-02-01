@@ -17,6 +17,14 @@ class Article < ActiveRecord::Base
     end
   end
   
+  def preview_image
+    image = super
+    if image == nil
+      return id + "_small.jpg"
+    else
+      return image
+    end
+  end
   
   def rubrik(rubrik_name)
     
