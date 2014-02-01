@@ -25,9 +25,6 @@ end
 
 get '/' do
   @article =  Article.last(7)
-  @article.each do |article|
-    #check ob bild null ist dann entweder default articleID.jpg oder nach datenbank
-  end
   erb :index
 end
 
