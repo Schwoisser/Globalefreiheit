@@ -47,7 +47,7 @@ get '/author/:author_id' do
  erb :index
 end
 
-get '/rubriken'
+get '/rubriken' do
  @rubriken = Rubrik.all
  erb :rubriken
 end
