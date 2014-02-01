@@ -6,10 +6,10 @@ require "sinatra/activerecord"
 require './models/article'
 require './models/author'
 require './models/rubrik'
+require './models/article_rubrik'
 
 set :environment, :production
 set :port, 80
-set :database, 'sqlite3:///development.sqlite3.db'
 
 configure do
   ActiveRecord::Base.establish_connection(
@@ -31,11 +31,9 @@ end
 #goto page x 
 #incomplete query
 get '/page/:page' do
-  @pagenumber = params[:page].to_i - 1
-  @article = Article.last(2)
-  @last_id = @article.first.ID.to_i
-  @article = Article.where("ID < ? AND ID > ?", @last_id - (@pagenumber*7) ,@last_id - (@pagenumber*7+7) )
-  erb :article
+  @page_number = params[:page].to_i - 1
+  @article = Article.page @page_number
+  erb :index
 end
 
 get '/article/:title' do
@@ -44,10 +42,14 @@ get '/article/:title' do
 end
 
 get '/author/:author_id' do
- @article = Article.find_by_author(params[:author_id])
+ @article = Article.where(author: params[:author_id])
  erb :index
 end
 
+get '/rubriken' do
+ @rubriken = Rubrik.all
+ erb :rubriken
+end
 
 get '/willkommen' do
   erb :willkommen
@@ -58,11 +60,11 @@ get '/links' do
 end
 
 get '/autoren' do
+  @authors = Author.all
   erb :autoren
 end
 
 get '/partner' do
-  @authors = Author.all.order(:Name)
   erb :partner
 end
 
