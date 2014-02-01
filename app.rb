@@ -42,13 +42,15 @@ get '/article/:title' do
 end
 
 get '/author/:author_id' do
- @article = Article.where(author: params[:author_id])
+ @article = Article.where(author: params[:author_id]).order(title: :asc)
  erb :index
 end
 
 get '/rubriken/:rubrik_id' do
-  #TODO make rubrik query
- @article = Article.last(7)
+ @article = Article.find_by_sql("select * from articles
+                                 inner join article_rubriks on articles.id = article_rubriks.a_id 
+                                 and article_rubriks.r_id = #{params[:rubrik_id]};
+                                ")
  erb :index
 end
 
