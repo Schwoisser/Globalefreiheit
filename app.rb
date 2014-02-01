@@ -46,6 +46,12 @@ get '/author/:author_id' do
  erb :index
 end
 
+get '/rubriken/:rubrik_id' do
+  #TODO make rubrik query
+ @article = Article.last(7)
+ erb :index
+end
+
 get '/rubriken' do
  @rubriken = Rubrik.all
  erb :rubriken
