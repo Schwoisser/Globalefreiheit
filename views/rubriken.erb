@@ -1,2 +1,12 @@
 <h2>Rubriken</h2>
 
+<span id="output">
+<% @rubriken.each do |rubrik|%>
+  <div id=<%=rubrik.Rubrikname %>>
+     <li>
+        <a href="/rubriken/<%=rubrik.RubrikID%>" shape="rect"><%=rubrik.Rubrikname %></a>
+     </li>
+  </div>	
+<% end %>
+</span>
+
