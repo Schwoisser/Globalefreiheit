@@ -20,7 +20,7 @@ class Article < ActiveRecord::Base
   def preview_image
     image = super
     if image == nil
-      return id + "_small.jpg"
+      return id.to_s + "_small.jpg"
     else
       return image
     end
