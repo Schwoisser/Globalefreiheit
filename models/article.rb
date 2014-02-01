@@ -17,6 +17,7 @@ class Article < ActiveRecord::Base
     end
   end
   
+  
   def rubrik(rubrik_name)
     
   end
