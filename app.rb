@@ -6,6 +6,7 @@ require "sinatra/activerecord"
 require './models/article'
 require './models/author'
 require './models/rubrik'
+require './models/article_rubrik'
 
 set :environment, :production
 set :port, 80
@@ -33,11 +34,9 @@ end
 #goto page x 
 #incomplete query
 get '/page/:page' do
-  @pagenumber = params[:page].to_i - 1
-  @article = Article.last(2)
-  @last_id = @article.first.ID.to_i
-  @article = Article.where("ID < ? AND ID > ?", @last_id - (@pagenumber*7) ,@last_id - (@pagenumber*7+7) )
-  erb :article
+  @page_number = params[:page].to_i - 1
+  @article = Article.page @page_number
+  erb :index
 end
 
 get '/article/:title' do
