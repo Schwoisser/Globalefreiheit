@@ -10,26 +10,56 @@ body {
 	padding:0;
 	margin :0;
 	display:table; 
-	width:100%;	
+	width:100%;
+	background-color:#FFFFFF;	
 }
 
+.header-content{
+	overflow:hidden;
+	font-size:1.1em;
+	font-family:Arial,sans-serif;
+	width:80%;
+	margin:0 auto ;	
+}
 
-	
-					
+#logo {
+	margin:0 auto;
+	overflow:hidden;
+	display:block;
+	float:left;
+}	
+				
+/* NAVIGATION */
+.navi{
+	float:right;
+}
+
+.navi li{
+	float:left;
+	list-style:none;
+}
+
+.navi li a{
+	color:#000066;
+	padding:20px;
+	display:block;
+	font-weight:bold;
+}
+
+.navi li a:hover{
+	background-color:#000066;
+	color:#FFFFFF; 
+	text-decoration:none;
+ }	
+/*END NAVIGATION*/ 
+ 
+ 
+/*					
 #wrapper {
 	margin:0 auto ;
 	width:100%;
-}
-
-					body {
-	background-color:#FFFFFF;
-}
-
-#wrapper {
 	border-top: 1px solid #ffffff;
 }
-	
-
 
 					
 #topBannerWrapper {
@@ -49,23 +79,6 @@ body {
     display: none;
 }
 
-/*LOGO*/
-#topBanner {
-	margin:0 auto;
-	
-	overflow:hidden;
-}					
-/* OLD CODE logo
-
-#topBanner {
-	width:920px;
-	margin:0 auto;
-	height:90px;
-	background-image:url(../images/css/topBanner.jpg);
-	background-repeat:no-repeat;
-	cursor:crosshair;
-	
-}*/
 
 #topBanner a {
 
@@ -104,7 +117,7 @@ body {
 
 #hmenu ul li a {
 	border:0 none;
-	color:#000066;
+	c
 	display:block;
 	float:left;
 	font-size:14px;
@@ -127,8 +140,7 @@ body {
 	background-color:#000066;
 	color:#FFFFFF; 
 }
-
-	
+*/	
 
 #topSlideshowWrapper {
 	width:100%;
@@ -143,7 +155,7 @@ body {
 	width: 920px;
 	margin:0 auto;
 }
-
+&#124;
 #VideoContent {
 	margin:0 ;
 	padding:0;
