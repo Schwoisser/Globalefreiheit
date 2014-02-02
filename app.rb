@@ -69,7 +69,7 @@ end
 
 get '/autoren' do
   @authors = Author.all
-  erb :autoren
+  erb :authoren
 end
 
 get '/partner' do
