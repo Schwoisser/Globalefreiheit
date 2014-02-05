@@ -47,9 +47,10 @@ get '/author/:author_id' do
 end
 
 get '/rubriken/:rubrik_id' do
+ rubrik_id = params[:rubrik_id].to_i
  @article = Article.find_by_sql("select * from articles
                                  inner join article_rubriks on articles.id = article_rubriks.a_id 
-                                 and article_rubriks.r_id = #{params[:rubrik_id]};
+                                 and article_rubriks.r_id = #{rubrik_id};
                                 ")
  erb :index
 end
