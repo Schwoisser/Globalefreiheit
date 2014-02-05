@@ -34,13 +34,13 @@
   </head>
   <body> 
 	<div class="header-content">
-	<a href="/"><img src="images/css/topBanner.jpg" id="logo"></a>
+	<a href="/"><img src="<%= url('images/css/topBanner.jpg')%>" id="logo"></a>
     	
 		<ul class="navi">
-			<li><a href="willkommen"> WILLKOMMEN</a></li>
-			<li><a href="videos">VIDEOS</a></li>
-			<li><a href="musik">MUSIK</a></li>
-			<li><a href="rubriken">RUBRIKEN</a></li>
+			<li><a href="<%= url('willkommen'%>"> WILLKOMMEN</a></li>
+			<li><a href="<%= url('videos'%>">VIDEOS</a></li>
+			<li><a href="<%= url('musik'%>">MUSIK</a></li>
+			<li><a href="<%= url('rubriken'%>">RUBRIKEN</a></li>
 		</ul>
 		</div>
 		
@@ -80,19 +80,19 @@
           <ul>   
           <br>
  <li>
-          <a href="autoren" shape="rect" ><b><font color="#00FFFF"> alle 	
+          <a href="<%= url('autoren') %>" shape="rect" ><b><font color="#00FFFF"> alle 	
 			</font> 	<span style="font-size: 16pt"><font color="#00FFFF">AUTOREN</font></span></b></a>
             </li> <br> <br> 
             
             
             <li>
-              <a href="partner" shape="rect"> <b><font color="#FFFF00">
+              <a href="<%= url('partner') %>" shape="rect"> <b><font color="#FFFF00">
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 24pt"> PARTNER</span></font></b> </a>
             </li><br><br>
             
             
                <li>
-              <a href="links" shape="rect"><b> 
+              <a href="<%= url('links') %>" shape="rect"><b> 
 				<font color="#66FF66" style="font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; LINKS</font></b></a>  
             </li>
             
@@ -114,13 +114,13 @@
             </li> <br> <br> 
             
              <li>
-             <a href="commu" shape="rect"> <b>
+             <a href="<%= url('commu') %>" shape="rect"> <b>
 				<font color="#FF9900" style="font-size: 12pt">COMUNITY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></font></a>  
             </li>
             <li><br><br>
             
                <b>
-               <a href="bitcoins" shape="rect"> 
+               <a href="<%= url('bitcoins') %>" shape="rect"> 
 			<font color="#6699FF" style="font-size: 16pt">BITCOINS</font><font color="#993333" style="font-size: 16pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</font></a></b></li>    
             
             
@@ -139,9 +139,9 @@
       <div id="bottom-links"> 
         <div style="padding-top:20px"> 
            <p align="center"> 
-           <a href="impressum.html" shape="rect"> Impressum </a>
+           <a href="<%= url('impressum') %>" shape="rect"> Impressum </a>
            <strong><b>&copy;</b></strong>
-           <a href="impressum.html" shape="rect"> Globale Freiheit </a>
+           <a href="<%= url('impressum') %>" shape="rect"> Globale Freiheit </a>
         </div> 
       </div>
      <!-- end Bottom -->  
