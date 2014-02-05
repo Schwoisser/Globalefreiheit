@@ -26,8 +26,8 @@ class Article < ActiveRecord::Base
     end
   end
   
-  def rubrik(rubrik_name)
-    
+  def author_name
+    Author.find_by_ID(@author).Name
   end
   
 end
