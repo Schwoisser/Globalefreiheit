@@ -27,7 +27,7 @@ class Article < ActiveRecord::Base
   end
   
   def author_name
-    author = Author.find_by_id(author).first
+    author = Author.find_by_id(self.author).first
     author.name
   end
   
