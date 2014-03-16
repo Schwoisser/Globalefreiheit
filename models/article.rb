@@ -5,7 +5,7 @@ class Article < ActiveRecord::Base
   def self.page (page_nr)
       article = last(2)
       last_id = article.first.id.to_i
-      article = find( ((last_id - (page_nr*7))..(last_id - (page_nr*7+7))).to_a )
+      article = find_by_id( ((last_id - (page_nr*7))..(last_id - (page_nr*7+7))).to_a )
   end
   
   def image
