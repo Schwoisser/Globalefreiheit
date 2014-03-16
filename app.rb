@@ -31,7 +31,7 @@ end
 #goto page x 
 #incomplete query
 get '/page/:page' do
-  page = params[:page].to_i
+  page_nr = params[:page].to_i
   article = Article.last(2)
   last_id = article.first.id.to_i
   from =last_id - (page_nr*7+7)
