@@ -2,7 +2,7 @@ class Article < ActiveRecord::Base
   attr_accessible  :id,:title,:author,:image, :preview_image,:text,:description,:tag,:link
   
   
-  def page(page_nr)
+  def page (page_nr)
       article = last(2)
       last_id = article.first.ID.to_i
       article = find( ((last_id - (page_nr*7))..(last_id - (page_nr*7+7))).to_a )
