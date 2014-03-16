@@ -9,6 +9,7 @@ class Article < ActiveRecord::Base
       to =last_id - (page_nr*7)
       puts from
       puts to
+      puts (from..to).to_a
       article = find_by_id((from..to).to_a )
       puts article
       return article
