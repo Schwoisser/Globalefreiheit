@@ -7,6 +7,8 @@ class Article < ActiveRecord::Base
       last_id = article.first.id.to_i
       from =last_id - (page_nr*7+7)
       to =last_id - (page_nr*7)
+      puts from
+      puts to
       article = find_by_id((from..to).to_a )
   end
   
