@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
   attr_accessible  :id,:title,:author,:image, :preview_image,:text,:description,:tag,:link
-  
+  self.primary_key = 'id'
   
   def self.page (page_nr)
       article = last(2)
@@ -9,8 +9,7 @@ class Article < ActiveRecord::Base
       to =last_id - (page_nr*7)
       puts from
       puts to
-      puts (from..to).to_a
-      article = find_by_id((from..to).to_a )
+      article = find((from..to).to_a)
       puts article
       return article
   end
