@@ -32,7 +32,11 @@ end
 #incomplete query
 get '/page/:page' do
   page = params[:page].to_i
-  @article = Article.page(page)
+  article = Article.last(2)
+  last_id = article.first.id.to_i
+  from =last_id - (page_nr*7+7)
+  to =last_id - (page_nr*7)
+  @article = Article.find((from..to).to_a)
   erb :index
 end
 
