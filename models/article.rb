@@ -5,7 +5,7 @@ class Article < ActiveRecord::Base
   def page(page_nr)
       article = last(2)
       last_id = article.first.ID.to_i
-      article = where("ID < ? AND ID > ?", @last_id - (@pagenumber*7) ,@last_id - (@pagenumber*7+7) )
+      article = find( (last_id - (pagenumber*7), last_id - (pagenumber*7+7)).to_a )
   end
   
   def image
