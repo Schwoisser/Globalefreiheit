@@ -10,6 +10,8 @@ class Article < ActiveRecord::Base
       puts from
       puts to
       article = find_by_id((from..to).to_a )
+      puts article
+      return article
   end
   
   def image
