@@ -32,7 +32,7 @@ end
 #incomplete query
 get '/page/:page' do
   page = params[:page].to_i
-  @article = Article.page(2)
+  @article = Article.page(page)
   erb :index
 end
 
