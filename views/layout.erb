@@ -44,20 +44,13 @@
 		</ul>
 		</div>
 		
-             <div id="topSlideshowWrapper"> 
+       <div id="topSlideshowWrapper"> 
         <div id="sliderContainer">
         <!-- anfang kopiern bannershow -->
-        <div id="slider1">  
-	        <ul id="slider1Content"></ul>
-              <li class="slider1Image" style="clear:both"></li>
-            </ul>  
-            <div id="sliderLeftMask"></div>  
-            <div id="sliderRightMask"></div> 
-          </div><!-- end kopiern bannershow -->
-          
-
-
-    
+        
+        	<%= if @slider do @slider end%>
+        	
+        <!-- end kopiern bannershow -->
         </div><!-- end sliderContainer -->
        </div><!-- end topSlideshowWrapper --> 
     </div>  <!-- end top wrapper -->  
