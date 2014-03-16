@@ -31,8 +31,7 @@ end
 #goto page x 
 #incomplete query
 get '/page/:page' do
-  @page_number = params[:page].to_i - 1
-  @article = Article.page @page_number
+  @article = Article.page params[:page].to_i
   erb :index
 end
 
