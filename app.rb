@@ -32,8 +32,8 @@ end
 #incomplete query
 get '/page/:page' do
   page_nr = params[:page].to_i
-  article = Article.last(2)
-  last_id = article.first.id.to_i
+  article = Article.last
+  last_id = article.id.to_i
   from =last_id - (page_nr*7+6)
   to =last_id - (page_nr*7)
   @article = Article.find((from..to).to_a).reverse!
