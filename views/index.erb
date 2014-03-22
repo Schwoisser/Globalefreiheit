@@ -22,9 +22,10 @@
 	<li style="width:250px; float:left; margin-right:90px ;">
         	<p align="left" style="text-align: left">
 		<span style="text-transform: none"><a href="<%= if @page_nr
+									puts "page:" + @page_nr
 									url("page/"+(@page_nr+1))
 								else
-									url("/")
+									url("page/1")
 								end
 								%>" shape="rect">
 		<font size=3 font face="Segoe Script"font color="#FF0000"></font></a></span></p>
@@ -33,11 +34,12 @@
                 <li style="width:250px; float:right;">
 		<p align="right" style="text-align: right"><strong>
 		<span style="text-transform: none"><a href="<%= if @page_nr
+									puts "page:" + @page_nr
 									url("page/"+(@page_nr+1))
 								else
 									url("page/1")
 								end
-								puts "page:" + @page_nr
+								
 								%>" shape="rect" >
 		<font size=3 face="Segoe Script" color="#FF0000">Archivseite ...</font></a></span>	</p>    
                 </li>
