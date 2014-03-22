@@ -31,11 +31,11 @@ end
 #goto page x 
 #incomplete query
 get '/page/:page' do
-  page_nr = params[:page].to_i
+  @page_nr = params[:page].to_i
   article = Article.last
   last_id = article.id.to_i
-  from =last_id - (page_nr*7+6)
-  to =last_id - (page_nr*7)
+  from =last_id - (@page_nr*7+6)
+  to =last_id - (@page_nr*7)
   @article = Article.find((from..to).to_a).reverse!
   erb :index
 end
