@@ -22,8 +22,8 @@
 	<li style="width:250px; float:left; margin-right:90px ;">
         	<p align="left" style="text-align: left">
 		<span style="text-transform: none"><a href="<%= if @page_nr
-									puts "page:" + @page_nr
-									url("page/"+(@page_nr+1))
+									puts "page:" + @page_nr.to_s
+									url("page/"+(@page_nr+1).to_s)
 								else
 									url("page/1")
 								end
@@ -34,8 +34,8 @@
                 <li style="width:250px; float:right;">
 		<p align="right" style="text-align: right"><strong>
 		<span style="text-transform: none"><a href="<%= if @page_nr
-									puts "page:" + @page_nr
-									url("page/"+(@page_nr+1))
+									puts "page:" + @page_nr.to_s
+									url("page/"+(@page_nr+1).to_s)
 								else
 									url("page/1")
 								end
