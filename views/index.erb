@@ -5,13 +5,13 @@
 			<ul>
 				<div style="display:table-cell; vertical-align:middle">	
 					<a class="link" onclick="load_article('<%="/article/"+article.title %>');" href="<%="/article/"+article.title %>" title="<%article.title%>">
-					<img style="vertical-align: text-top; margin-right: 1em;"src="<%= url("slider/"+article.preview_image) %>">
+					<img style="vertical-align: text-top; margin-right: 1em; float=left;"src="<%= url("slider/"+article.preview_image) %>">
 					
-					<font style="text-align: right" size="3"><%=article.title %> </font>
+					<font style="float:right;" size="3"><%=article.title %> </font>
 					<span style="font-weight: 400"><%=article.author_name%>
 					<p>
 						<%=article.description %>
-					</p> 			
+					</p> 
 					</span> 
 					</a>
 				</div>
