@@ -24,7 +24,7 @@ end
 
 
 get '/' do
-  @article =  Article.last(7)
+  @article =  Article.last(7).reverse!
   erb :index
 end
 
@@ -36,7 +36,7 @@ get '/page/:page' do
   last_id = article.first.id.to_i
   from =last_id - (page_nr*7+6)
   to =last_id - (page_nr*7)
-  @article = Article.find((from..to).to_a)
+  @article = Article.find((from..to).to_a).reverse!
   erb :index
 end
 
