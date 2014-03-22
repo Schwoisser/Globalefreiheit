@@ -4,12 +4,12 @@
 		<div id=<%=article.title %>>
 			<ul>
 				<div style="display:table-cell; vertical-align:middle">	
-					<a vertical-align="top" style="text-align: top" class="link" onclick="load_article('<%="/article/"+article.title %>');" href="<%="/article/"+article.title %>" title="<%article.title%>">
-					<img vertical-align="middle"src="<%= url("slider/"+article.preview_image) %>">
+					<a class="link" onclick="load_article('<%="/article/"+article.title %>');" href="<%="/article/"+article.title %>" title="<%article.title%>">
+					<img style="vertical-align: text-top; margin-right: 1em;"src="<%= url("slider/"+article.preview_image) %>">
 					
-					<font vertical-align="middle" style="text-align: right" size="3"><%=article.title %> </font>
-					<span vertical-align="middle" style="font-weight: 400"><%=article.author_name%>
-					<p vertical-align="middle">
+					<font style="text-align: right" size="3"><%=article.title %> </font>
+					<span style="font-weight: 400"><%=article.author_name%>
+					<p>
 						<%=article.description %>
 					</p> 			
 					</span> 
