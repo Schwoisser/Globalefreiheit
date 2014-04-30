@@ -8,6 +8,8 @@ Installation
 
 Windows
 
+Im Moment funktioniert das Mysql 2 Gem nicht unter windows. Daher könnt ihr zm testen meine Rasppi benutzen.
+
 Installiere Ruby 1.9.3 und das Ruby Devkit für 1.9.3 von
 http://rubyinstaller.org/downloads/
 
