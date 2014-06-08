@@ -26,6 +26,7 @@ end
 get '/' do
   @article =  Article.last(7).reverse!
   @slider = erb :slider
+  puts erb :slider
   erb :index
 end
 
@@ -40,7 +41,7 @@ get '/page/:page' do
   @article = Article.find((from..to).to_a).reverse!
   
   @slider = erb :slider
-  
+
   erb :index
 end
 
