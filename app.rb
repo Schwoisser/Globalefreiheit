@@ -25,6 +25,7 @@ end
 
 get '/' do
   @article =  Article.last(7).reverse!
+  @slider = erb :slider
   erb :index
 end
 
@@ -37,6 +38,9 @@ get '/page/:page' do
   from =last_id - (@page_nr*7+6)
   to =last_id - (@page_nr*7)
   @article = Article.find((from..to).to_a).reverse!
+  
+  @slider = erb :slider
+  
   erb :index
 end
 
@@ -57,6 +61,8 @@ get '/rubriken/:rubrik_id' do
                                  inner join article_rubriks on articles.id = article_rubriks.a_id 
                                  and article_rubriks.r_id = #{rubrik_id};
                                 ")
+                                
+ @slider = erb :slider
  erb :index
 end
 
@@ -104,10 +110,6 @@ end
 
 get '/musik' do
   erb :musik
-end
-
-put '/article/:title' do
-  
 end
 
 
