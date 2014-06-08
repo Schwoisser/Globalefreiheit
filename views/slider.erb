@@ -6,20 +6,23 @@
 </style>
 
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript" language="javascript" src="<%= url('js/jquery.slides.min.js') %>"></script>
+  <script type="text/javascript" language="javascript" src="<%= url('jssor.slider.mini.js') %>"></script>
 
 <script>
-    $(function(){
-      $("#slides").slidesjs({
-
-      });
+    jQuery(document).ready(function ($) {
+        var options = { $AutoPlay: true };
+        var jssor_slider1 = new $JssorSlider$('slider1_container', options);
     });
 </script>
 
-<div id="slides">
-  <% @article.each do |article|%>
-    <img src="<%= url("slider/"+article.preview_image) %>">
-  <% end %>
+<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;">
+    <!-- Slides Container -->
+    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 300px;">
+        <% @article.each do |article|%>
+        <div><img u="image" src="<%= url("slider/"+article.image) %>" /></div>
+        <% end %>
+    </div>
 </div>
+
   
   
