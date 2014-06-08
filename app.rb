@@ -25,8 +25,8 @@ end
 
 get '/' do
   @article =  Article.last(7).reverse!
-  @slider = erb :slider
-  puts erb :slider
+  @slider = erb :slider, :layout => false
+  puts erb :slider, :layout => false
   erb :index
 end
 
@@ -40,7 +40,7 @@ get '/page/:page' do
   to =last_id - (@page_nr*7)
   @article = Article.find((from..to).to_a).reverse!
   
-  @slider = erb :slider
+  @slider = erb :slider, :layout => false
 
   erb :index
 end
@@ -63,7 +63,7 @@ get '/rubriken/:rubrik_id' do
                                  and article_rubriks.r_id = #{rubrik_id};
                                 ")
                                 
- @slider = erb :slider
+ @slider = erb :slider, :layout => false
  erb :index
 end
 
