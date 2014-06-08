@@ -5,7 +5,7 @@ class Article < ActiveRecord::Base
   def image
     image = super
     if image == nil
-      return id + ".jpg"
+      return id.to_s + ".jpg"
     else
       return image
     end
