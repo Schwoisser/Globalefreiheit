@@ -3,11 +3,12 @@
 	<% @article.each do |article|%>
 		<div id=<%=article.title %>>
 		  <ul>
+		  <div style="display:table-cell; vertical-align:middle">
 		      <a class="link" onclick="load_article('<%="/article/"+article.title %>');" href="<%="/article/"+article.title %>" title="<%article.title%>">
 			<font style="float:right;" size="3"><%=article.title %> </font>
 			<img style="loat=left;"src="<%= url("slider/"+article.preview_image) %>">
 		      
-			  <div style="display:table-cell; vertical-align:middle">	
+			  	
 					
 					
 					
