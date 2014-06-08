@@ -55,7 +55,7 @@ get '/rubriken/:rubrik_id' do
 end
 
 get '/rubriken' do
- @rubriken = Rubrik.all
+ @rubriken = Rubrik.all.order(:name)
  erb :rubriken
 end
 
