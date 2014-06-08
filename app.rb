@@ -74,7 +74,7 @@ get '/links' do
 end
 
 get '/autoren' do
-  @authors = Author.all
+  @authors = Author.all.order(:name)
   erb :autoren
 end
 
