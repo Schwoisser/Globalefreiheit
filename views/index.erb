@@ -1,5 +1,5 @@
 <script type="text/javascript" language="javascript" src="<%= url('js/main.js') %>"></script>
-<span id="output">
+<div id="output">
 	<% @article.each do |article|%>
 		<div id=<%=article.title %>>
 		  <ul>
@@ -7,18 +7,18 @@
 		      <a class="link" onclick="load_article('<%="/article/"+article.title %>');" href="<%="/article/"+article.title %>" title="<%article.title%>">
 			<font style="float:left;" size="3"><%=article.title %> </font><br><br>
 			<div style="font-weight: 400">von <%=article.author_name%><br><br>&nbsp;
-			<img style="float:left;"src="<%= url("slider/"+article.preview_image) %>"><br><br>
+			<img style="float:left;"src="<%= url("slider/"+article.preview_image) %>"><br><br>&nbsp;
 					<p>
 						<%=article.description %>
 					</p> 
-					</div> 
+					</div>
 					</a>
 			  </div>
 			</ul>
-		</div>		
+		</div><br><br>&nbsp;		
 	              
 	<% end %>
-</span>
+</div>
 <ul style="list-style:none inside none; text-transform:uppercase;margin:0;padding:0;">
 	<li style="width:250px; float:left; margin-right:90px ;">
         	<p align="left" style="text-align: left">
