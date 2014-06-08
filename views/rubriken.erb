@@ -2,11 +2,13 @@
 
 <span id="output">
 <% @rubriken.each do |rubrik|%>
-  <div id=<%=rubrik.Rubrikname %>>
+  <div id=<%=rubrik.name %>>
      <li>
-        <a href="/rubriken/<%=rubrik.RubrikId%>" shape="rect"><%=rubrik.Rubrikname %></a>
+        <a href="/rubriken/<%=rubrik.id%>" shape="rect"><%=rubrik.name %></a>
      </li>
   </div>	
 <% end %>
 </span>
 
+<a href="/" shape="rect">
+<font color="#FF0000" face="Segoe Script" size="3"> ... zurückblättern</font></a></li>

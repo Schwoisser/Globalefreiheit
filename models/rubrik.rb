@@ -1,3 +1,3 @@
 class Rubrik < ActiveRecord::Base
-  attr_accessible :RubrikID,:Rubrikname
+  attr_accessible :id,:name
 end

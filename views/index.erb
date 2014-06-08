@@ -2,19 +2,48 @@
 <span id="output">
 	<% @article.each do |article|%>
 		<div id=<%=article.title %>>
-			<ul>
-				<a class="link" onclick="load_article('<%="article/"+article.title %>');" href="<%="article/"+article.title %>" title="<%article.title%>">
-				<img src="<%= "slider/"+article.preview_image %>">
-				
-				<font size="3"><%=article.title %> </font>
-				<span style="font-weight: 400"><%article.author%>
-				<p>
-					<%=article.description %>
-				</p> 			
-				</span> 
-				</a>
+		  <ul>
+		      <div>
+			<img style="loat=left;"src="<%= url("slider/"+article.preview_image) %>">
+		      </div>
+			  <div style="display:table-cell; vertical-align:middle">	
+					<a class="link" onclick="load_article('<%="/article/"+article.title %>');" href="<%="/article/"+article.title %>" title="<%article.title%>">
+					
+					
+					<font style="float:right;" size="3"><%=article.title %> </font>
+					<span style="font-weight: 400"><%=article.author_name%>
+					<p>
+						<%=article.description %>
+					</p> 
+					</span> 
+					</a>
+			  </div>
 			</ul>
 		</div>		
 	              
 	<% end %>
 </span>
+<ul style="list-style:none inside none; text-transform:uppercase;margin:0;padding:0;">
+	<li style="width:250px; float:left; margin-right:90px ;">
+        	<p align="left" style="text-align: left">
+		<span style="text-transform: none"><a href="<%= if @page_nr
+									url("page/"+(@page_nr+1).to_s)
+								else
+									url("page/1")
+								end
+								%>" shape="rect">
+		<font size=3 font face="Segoe Script"font color="#FF0000"></font></a></span></p>
+		</li>
+              
+                <li style="width:250px; float:right;">
+		<p align="right" style="text-align: right"><strong>
+		<span style="text-transform: none"><a href="<%= if @page_nr
+									url("page/"+(@page_nr+1).to_s)
+								else
+									url("page/1")
+								end
+								
+								%>" shape="rect" >
+		<font size=3 face="Segoe Script" color="#FF0000">Archivseite ...</font></a></span>	</p>    
+                </li>
+</ul>

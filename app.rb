@@ -24,20 +24,25 @@ end
 
 
 get '/' do
-  @article =  Article.last(7)
+  @article =  Article.last(7).reverse!
   erb :index
 end
 
 #goto page x 
 #incomplete query
 get '/page/:page' do
-  @page_number = params[:page].to_i - 1
-  @article = Article.page @page_number
+  @page_nr = params[:page].to_i
+  article = Article.last
+  last_id = article.id.to_i
+  from =last_id - (@page_nr*7+6)
+  to =last_id - (@page_nr*7)
+  @article = Article.find((from..to).to_a).reverse!
   erb :index
 end
 
 get '/article/:title' do
   @article = Article.find_by_title(params[:title])
+  @slider = @article.slider
   erb :article #, (request.xhr? ? false : :layout) #just return the article without layout when its an ajax request
 end
 
@@ -47,9 +52,10 @@ get '/author/:author_id' do
 end
 
 get '/rubriken/:rubrik_id' do
+ rubrik_id = params[:rubrik_id].to_i
  @article = Article.find_by_sql("select * from articles
                                  inner join article_rubriks on articles.id = article_rubriks.a_id 
-                                 and article_rubriks.r_id = #{params[:rubrik_id]};
+                                 and article_rubriks.r_id = #{rubrik_id};
                                 ")
  erb :index
 end

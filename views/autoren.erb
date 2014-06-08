@@ -2,12 +2,15 @@
 <ul>
 <% @authors.each do |author|%> 
 	<li>
-		<a href="/author/<%=author.ID%>" shape="rect"><%=author.Name%></a>
+		<a href="/author/<%=author.id%>" shape="rect"><%=author.name%></a>
 	</li>
 <% end %>
 </ul>
 <li style="list-style:none inside none;";> &nbsp;
 </span>
+
+<a href="/" shape="rect">
+<font color="#FF0000" face="Segoe Script" size="3"> ... zurückblättern</font></a></li>
          
 		
  

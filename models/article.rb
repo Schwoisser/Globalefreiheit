@@ -1,12 +1,6 @@
 class Article < ActiveRecord::Base
   attr_accessible  :id,:title,:author,:image, :preview_image,:text,:description,:tag,:link
-  
-  
-  def page(page_nr)
-      article = last(2)
-      last_id = article.first.ID.to_i
-      article = where("ID < ? AND ID > ?", @last_id - (@pagenumber*7) ,@last_id - (@pagenumber*7+7) )
-  end
+  self.primary_key = 'id'
   
   def image
     image = super
@@ -26,8 +20,9 @@ class Article < ActiveRecord::Base
     end
   end
   
-  def rubrik(rubrik_name)
-    
+  def author_name
+    author = Author.find_by_id(self.author)
+    author.name
   end
   
 end
