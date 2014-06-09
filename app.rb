@@ -26,7 +26,6 @@ end
 get '/' do
   @article =  Article.last(7).reverse!
   @slider = erb :slider, :layout => false
-  puts erb :slider, :layout => false
   erb :index
 end
 
