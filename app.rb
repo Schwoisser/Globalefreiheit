@@ -113,5 +113,9 @@ get '/musik' do
   erb :musik
 end
 
+get '/books' do
+  erb :books
+end
+
 
 
