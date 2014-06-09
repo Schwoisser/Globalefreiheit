@@ -1,4 +1,6 @@
 
+<div id="slider1">  
+<ul id="slider1Content">
 <% @article.each do |article|%>
   <li class="slider1Image"> 
     <a href="<%= url("article/"+article.title) %>" title="" target="_blank" shape="rect"> 
@@ -8,3 +10,7 @@
     </a> 
   </li>
 <% end %>
+<li class="slider1Image" style="clear:both"></li>
+</ul>  
+<div id="sliderLeftMask"></div>  
+<div id="sliderRightMask"></div> 
