@@ -41,8 +41,8 @@ get '/page/:page' do
   erb :index
 end
 
-get '/article/:title' do
-  @article = Article.find_by_title(params[:title])
+get '/article/:id' do
+  @article = Article.find_by_id(params[:id])
   @slider = @article.slider
   erb :article #, (request.xhr? ? false : :layout) #just return the article without layout when its an ajax request
 end
