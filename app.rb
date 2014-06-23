@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby 
 require 'sinatra'
 require "active_record"
-require 'sinatra/activrecord'
+require 'sinatra/activerecord'
 require './models/article'
 require './models/author'
 require './models/rubrik'
