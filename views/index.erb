@@ -4,7 +4,7 @@
 		<div id=<%=article.title %>>
 		  <ul>
 		  
-		      <a class="link" onclick="load_article('<%="/article/"+article.title %>');" href="<%="/article/"+article.title %>" title="<%article.title%>">
+		      <a class="link" onclick="load_article('<%="/article/"+article.id %>');" href="<%="/article/"+article.id %>" title="<%article.title%>">
 			<font style="float:left;" size="3"><%=article.title %> </font><br><br>
 			<div style="font-weight: 400"><i>von <%=article.author_name%></i><br><br>&nbsp;
 			<img style="float:left; margin:10px 20px 0 0;" src="<%= url("slider/"+article.preview_image) %>">
