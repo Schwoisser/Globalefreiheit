@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby 
 require 'sinatra'
-require 'protected_attributes'
 require "active_record"
-require "sinatra/activerecord"
 
 require './models/article'
 require './models/author'
