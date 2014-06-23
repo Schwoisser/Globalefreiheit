@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby 
 require 'sinatra'
 require "active_record"
-require 'sinatra/activerecord'
 require './models/article'
 require './models/author'
 require './models/rubrik'
@@ -13,11 +12,10 @@ set :environment, :production
 set :port, 80
 
 dbconfig = YAML::load(File.open('config/database.yml'))
-
 configure do
   ActiveRecord::Base.establish_connection(dbconfig["production"])
 end
-
+require "sinatra/activerecord"
 
 
 get '/' do
