@@ -10,15 +10,7 @@ require './models/article_rubrik'
 set :environment, :production
 set :port, 80
 
-configure do
-  ActiveRecord::Base.establish_connection(
-    :adapter  => "mysql2",
-    :host     => "localhost",
-    :username => "test",
-    :password => "test",
-    :database => "Globalefreiheit"
-  )
-end
+require './config/db'
 
 
 
