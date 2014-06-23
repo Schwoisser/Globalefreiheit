@@ -1,5 +1,4 @@
 class Article < ActiveRecord::Base
-  attr_accessible  :id,:title,:author,:image, :preview_image,:text,:description,:tag,:link
   self.primary_key = 'id'
   
   def image
