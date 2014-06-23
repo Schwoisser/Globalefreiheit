@@ -8,11 +8,10 @@ require './models/rubrik'
 require './models/article_rubrik'
 
 set :environment, :production
-set :port, 80
+#set :port, 80
 
-require './config/db'
-
-
+dbconfig = YAML::load(File.open('database.yml'))
+ActiveRecord::Base.establish_connection(dbconfig)
 
 get '/' do
   @article =  Article.last(7).reverse!
