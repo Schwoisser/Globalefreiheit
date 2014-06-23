@@ -7,8 +7,6 @@ require './models/author'
 require './models/rubrik'
 require './models/article_rubrik'
 
-require "sinatra/config_file"
-
 #config_file 'config/database.yml'
 
 set :environment, :production
