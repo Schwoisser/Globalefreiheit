@@ -10,7 +10,7 @@ require './models/article_rubrik'
 #config_file 'config/database.yml'
 
 set :environment, :production
-#set :port, 80
+set :port, 80
 
 dbconfig = YAML::load(File.open('config/database.yml'))
 
