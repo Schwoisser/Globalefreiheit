@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 gem  'sinatra'
 gem  'protected_attributes'
-gem  "activerecord"
+gem  "activerecord", '4.0.2'
 gem  "sinatra-activerecord"
