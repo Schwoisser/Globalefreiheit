@@ -7,11 +7,20 @@ require './models/author'
 require './models/rubrik'
 require './models/article_rubrik'
 
+require "sinatra/config_file"
+
+#config_file 'config/database.yml'
+
 set :environment, :production
 #set :port, 80
 
 dbconfig = YAML::load(File.open('config/database.yml'))
-ActiveRecord::Base.establish_connection(dbconfig)
+
+configure do
+  ActiveRecord::Base.establish_connection(dbconfig)
+end
+
+
 
 get '/' do
   @article =  Article.last(7).reverse!
