@@ -15,7 +15,7 @@ set :environment, :production
 dbconfig = YAML::load(File.open('config/database.yml'))
 
 configure do
-  ActiveRecord::Base.establish_connection(dbconfig)
+  ActiveRecord::Base.establish_connection(dbconfig["production"])
 end
 
 
