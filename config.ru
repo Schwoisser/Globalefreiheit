@@ -1,6 +1,6 @@
 #required for railshoster deployment
 # config.ru
 require 'sinatra'
-require './app'
+require './test'
 run Sinatra::Application
 # End config.ru
