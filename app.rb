@@ -11,8 +11,9 @@ require './models/article_rubrik'
 set :environment, :production
 set :port, 80
 
-dbconfig = YAML::load(File.open('config/database.yml'))
+
 configure do
+  dbconfig = YAML::load(File.open('config/database.yml'))
   ActiveRecord::Base.establish_connection(dbconfig["production"])
     enable :logging
     set :dump_errors, false
