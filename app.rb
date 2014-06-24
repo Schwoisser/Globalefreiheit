@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby 
 require 'sinatra'
+require 'active_record'
 require 'sinatra/activerecord'
 require './models/article'
 require './models/author'
@@ -11,21 +12,23 @@ require './models/article_rubrik'
 set :environment, :production
 #set :port, 80
 
-dbconfig = YAML::load(File.open('config/database.yml'))
-configure do
-  ActiveRecord::Base.establish_connection(dbconfig["production"])
-    enable :logging
-    set :dump_errors, false
-    Dir.mkdir('log') unless File.exist?('log')
 
-    $logger = Logger.new('log/production.log','weekly')
-    $logger.level = Logger::WARN
+configure do
+#  dbconfig = YAML::load(File.open('config/database.yml'))
+#  puts dbconfig
+#  ActiveRecord::Base.establish_connection(dbconfig["production"])
+ #   enable :logging
+ #   set :dump_errors, false
+#    Dir.mkdir('log') unless File.exist?('log')
+
+#    $logger = Logger.new('log/production.log','weekly')
+#    $logger.level = Logger::WARN
 
     # Spit stdout and stderr to a file during production
     # in case something goes wrong
-    $stdout.reopen("log/production.log", "w")
-    $stdout.sync = true
-    $stderr.reopen($stdout)
+#    $stdout.reopen("log/production.log", "w")
+#    $stdout.sync = true
+#    $stderr.reopen($stdout)
 end
 
 
