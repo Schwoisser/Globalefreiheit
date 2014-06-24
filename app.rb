@@ -15,6 +15,7 @@ set :port, 80
 
 configure do
   dbconfig = YAML::load(File.open('config/database.yml'))
+  puts dbconfig
   ActiveRecord::Base.establish_connection(dbconfig["production"])
     enable :logging
     set :dump_errors, false
