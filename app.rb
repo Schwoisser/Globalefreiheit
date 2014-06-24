@@ -17,18 +17,18 @@ configure do
 #  dbconfig = YAML::load(File.open('config/database.yml'))
 #  puts dbconfig
 #  ActiveRecord::Base.establish_connection(dbconfig["production"])
-    enable :logging
-    set :dump_errors, false
-    Dir.mkdir('log') unless File.exist?('log')
+ #   enable :logging
+ #   set :dump_errors, false
+#    Dir.mkdir('log') unless File.exist?('log')
 
-    $logger = Logger.new('log/production.log','weekly')
-    $logger.level = Logger::WARN
+#    $logger = Logger.new('log/production.log','weekly')
+#    $logger.level = Logger::WARN
 
     # Spit stdout and stderr to a file during production
     # in case something goes wrong
-    $stdout.reopen("log/production.log", "w")
-    $stdout.sync = true
-    $stderr.reopen($stdout)
+#    $stdout.reopen("log/production.log", "w")
+#    $stdout.sync = true
+#    $stderr.reopen($stdout)
 end
 
 
