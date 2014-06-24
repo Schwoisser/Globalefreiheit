@@ -14,6 +14,9 @@ set :port, 80
 
 
 configure do
+ 
+ #sinatra activerecord does the db connection for us
+ 
 #  dbconfig = YAML::load(File.open('config/database.yml'))
 #  puts dbconfig
 #  ActiveRecord::Base.establish_connection(dbconfig["production"])
