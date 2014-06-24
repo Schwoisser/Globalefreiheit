@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby 
 require 'sinatra'
-require "active_record"
+require 'sinatra/activerecord'
 require './models/article'
 require './models/author'
 require './models/rubrik'
@@ -112,5 +112,10 @@ get '/books' do
   erb :books
 end
 
+after do
+  # Close the connection after the request is done so that we don't
+  # deplete the ActiveRecord connection pool.
+  ActiveRecord::Base.connection.close
+end
 
 
