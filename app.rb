@@ -76,7 +76,7 @@ end
 
 get '/autoren' do
   @authors = Author.all.order(:name)
-  
+
   erb :autoren
 end
 
@@ -131,7 +131,7 @@ get '/rss.xml' do
             xml.title post.title
             xml.link link + "article/#{post.id}"
             xml.description post.description
-            xml.pubDate Time.parse(post.created_at.to_s).rfc822()
+            #xml.pubDate Time.parse(post.created_at.to_s).rfc822()
             xml.guid link+"article/#{post.id}"
           end
         end
