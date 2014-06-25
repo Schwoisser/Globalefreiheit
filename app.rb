@@ -25,11 +25,8 @@ end
 
 get '/page/:page' do
   @page_nr = params[:page].to_i
-  article = Article.last
-  last_id = article.id.to_i
-  from =last_id - (@page_nr*7+6)
-  to =last_id - (@page_nr*7)
-  @article = Article.find((from..to).to_a).reverse!
+  @article = Article.page @page_nr
+
   @slider = erb :slider, :layout => false
 
   erb :index
@@ -50,10 +47,7 @@ end
 
 get '/rubriken/:rubrik_id' do
  rubrik_id = params[:rubrik_id].to_i
- @article = Article.find_by_sql("select * from articles
-                                 inner join article_rubriks on articles.id = article_rubriks.a_id 
-                                 and article_rubriks.r_id = #{rubrik_id};
-                                ")
+ @article = Article.rubrik rubrik_id
 
  @slider = erb :slider, :layout => false
 

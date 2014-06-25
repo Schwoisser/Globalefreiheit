@@ -8,6 +8,13 @@ class Article < ActiveRecord::Base
     to =last_id - (nr*7)
     find((from..to).to_a).reverse!
   end
+
+  def rubrik(rubrik_id)
+    find_by_sql("select * from articles
+                                 inner join article_rubriks on articles.id = article_rubriks.a_id 
+                                 and article_rubriks.r_id = #{rubrik_id};
+                                ")
+  end
   
   def image
     image = super
