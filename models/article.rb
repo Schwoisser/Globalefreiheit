@@ -1,7 +1,7 @@
 class Article < ActiveRecord::Base
   self.primary_key = 'id'
 
-  def page(nr)
+  def self.page(nr)
     article = last
     last_id = article.id.to_i
     from =last_id - (nr*7+6)
@@ -9,7 +9,7 @@ class Article < ActiveRecord::Base
     find((from..to).to_a).reverse!
   end
 
-  def all_for_rubrik(rubrik_id)
+  def self.all_for_rubrik(rubrik_id)
     find_by_sql("select * from articles
                                  inner join article_rubriks on articles.id = article_rubriks.a_id 
                                  and article_rubriks.r_id = #{rubrik_id};
