@@ -1,4 +1,5 @@
-#!/usr/bin/env ruby 
+#!/usr/bin/env ruby
+# -*- coding: undecided -*-
 require 'sinatra'
 require 'active_record'
 require 'sinatra/activerecord'
@@ -42,8 +43,6 @@ get '/' do
   erb :index
 end
 
-#goto page x 
-#incomplete query
 get '/page/:page' do
   @page_nr = params[:page].to_i
   article = Article.last
@@ -51,7 +50,6 @@ get '/page/:page' do
   from =last_id - (@page_nr*7+6)
   to =last_id - (@page_nr*7)
   @article = Article.find((from..to).to_a).reverse!
-  
   @slider = erb :slider, :layout => false
 
   erb :index
@@ -74,7 +72,6 @@ get '/rubriken/:rubrik_id' do
                                  inner join article_rubriks on articles.id = article_rubriks.a_id 
                                  and article_rubriks.r_id = #{rubrik_id};
                                 ")
-                                
  @slider = erb :slider, :layout => false
  erb :index
 end
@@ -129,6 +126,34 @@ get '/books' do
    @slider = erb :books_slider, :layout => false
   erb :books
 end
+
+#rss
+
+get '/rss.xml' do
+  @articles =  Article.last(21).reverse!
+  link = "http://www.globalefreiheit.de/"
+  builder do |xml|
+  xml.instruct! :xml, :version => '1.0'
+  xml.rss :version => "2.0" do
+    xml.channel do
+      xml.title "Globalefreiheit"
+        xml.description "für alle Menschen auf der Welt"
+        xml.link link
+
+        @articles.each do |post|
+          xml.item do
+            xml.title post.title
+            xml.link link + "article/#{post.id}"
+            xml.description post.description
+            xml.pubDate Time.parse(post.created_at.to_s).rfc822()
+            xml.guid link+"article/#{post.id}"
+          end
+        end
+      end
+    end
+  end
+end
+
 
 after do
   # Close the connection after the request is done so that we don't
