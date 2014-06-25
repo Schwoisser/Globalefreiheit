@@ -1,157 +1,159 @@
-<!DOCTYPE html>
-<html lang="de">
-  <head>
-    <title>Globale Freiheit</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="title" content="Globale Freiheit" />
-    <meta name="description" content="Globale Freiheit für alle Menschen auf der Welt, anarchie, voluntarismus, libertarismus, libertär, freier Markt, Österreichische schule, freiwillig, bitcoin, " />
-    
-		
-	<meta name="author" content="isomorph" />
-	<meta name="email" content="" />
-    <meta name="publisher" content="isomorph" />
-	<meta name="copyright" content="munselmann" />
-    
-    <meta name="keywords" content="anarchie, anarchismus, voluntarismus, libertarismus, libertär, freiheit, selbstständig,selbstständigkeit,selbstbestimmt,freiwilligkeit,autonom,autonomie,autonomistisch,ronpaul,thruth,thruthment,movement,occupy,
-    								videos,bilder,veranstaltungen,spenden,ausallerwelt,marktwirtschaft,freiemarktwirtschaft,musik,bandbreite,killezmore,guantana-mohr,anarchiex" />
-    	
-	<link rel="shortcut icon" type="image/x-icon" href="<%= url('css/flav.ico') %>">			
-
-    <meta name="language" content="de" />
-    <meta name="subject" content="Site subject here" />
-    <meta name="robots" content="All" />
-    <meta name="robots" content="index,follow" />
-    <meta name="copyright" content="Globale Freiheit" />
-    <meta name="abstract" content="Globale Freiheit für alle Menschen auf der Welt" />
-    <meta name="MSSmartTagsPreventParsing" content="true" />
-
-
-    <link id="theme" rel="stylesheet" type="text/css" href="<%= url('css/style.css') %>" title="theme" />
-    <link rel="shortcut icon" type="image/x-icon" href="<%= url('css/flav.ico') %>">
-	<script type="text/javascript" language="javascript" src="<%= url('js/addon.js') %>"></script>
-	<script type="text/javascript" language="javascript" src="<%= url('js/custom.js') %>"></script>
-	<script type="text/javascript" language="javascript" src="<%= url('js/main.js') %>"></script>
-  </head>
-  <body> 
-	<div class="header-content">
-	<a href="/"><img src="<%= url('images/css/topBanner.jpg')%>" id="logo"></a>
-    	
-		<ul class="navi">
-			<li><a href="<%= url('willkommen')%>"> WILLKOMMEN</a></li>
-			<li><a href="<%= url('videos')%>">VIDEOS</a></li>
-			<li><a href="<%= url('musik')%>">MUSIK</a></li>
-			<li><a href="<%= url('rubriken')%>">RUBRIKEN</a></li>
-		</ul>
-		</div>
-		
-       <div id="topSlideshowWrapper"> 
-        <div id="sliderContainer">
-        <!-- anfang kopiern bannershow -->
-        
-            <%= 
-              @slider if @slider 
-            %>
-        <!-- end kopiern bannershow -->
-        </div><!-- end sliderContainer -->
-       </div><!-- end topSlideshowWrapper --> 
-    </div>  <!-- end top wrapper -->  
+  <!DOCTYPE html>
+  <html lang="de">
+    <head>
+      <title>Globale Freiheit</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="title" content="Globale Freiheit" />
+      <meta name="description" content="Globale Freiheit für alle Menschen auf der Welt, anarchie, voluntarismus, libertarismus, libertär, freier Markt, Österreichische schule, freiwillig, bitcoin, " />
       
-    <div id="wrapper"> 
-      <div id="container"> 
-        <!--  content -->  
-        <div id="content" style="margin-top:20px;">
-        	  
-         <%= yield%>    
-        	
-   <div class="clear" style="height:40px"></div> 
-      </div> <!-- end container --> 
-    </div> <!-- end wrapper -->  
-    <div id="bottomWrapper"> 
-      <div id="footer"> 
-          
-        <div class="footer-one-third" style="text-align: left; float:left"> 
-       
-          <ul>   
-          <br>
- <li>
-          <a href="<%= url('autoren') %>" shape="rect" ><b><font color="#00FFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alle 	
-			</font> 	<span style="font-size: 16pt"><font color="#00FFFF"> AUTOREN</font></span></b></a>
-            </li> <br> <br> 
-            
-            
-            <li> <a href="<%= url('rubriken')%>" target="_blank" shape="rect"> <b>
-			<font color="#CC0000">
-                  <span style="font-size: 16pt"> RUBRIKEN</span></font></b> </a>
-                      
-                      
-              <a href="<%= url('books') %>" shape="rect"> <b><font color="#FFFF00">
-                     <span style="font-size: 20pt">&nbsp;&nbsp;&nbsp; B&#220;CHER</span></font></b> </a>
-            </li><br><br>
-            
-            
-               <li>
-              <a href="<%= url('links') %>" shape="rect"><b> 
-				<font color="#66FF66" style="font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LINKS</font></b></a>  
-            </li>
-            
+  		
+  	<meta name="author" content="isomorph" />
+  	<meta name="email" content="" />
+      <meta name="publisher" content="isomorph" />
+  	<meta name="copyright" content="munselmann" />
+      
+      <meta name="keywords" content="anarchie, anarchismus, voluntarismus, libertarismus, libertär, freiheit, selbstständig,selbstständigkeit,selbstbestimmt,freiwilligkeit,autonom,autonomie,autonomistisch,ronpaul,thruth,thruthment,movement,occupy,
+      								videos,bilder,veranstaltungen,spenden,ausallerwelt,marktwirtschaft,freiemarktwirtschaft,musik,bandbreite,killezmore,guantana-mohr,anarchiex" />
+      	
+  	<link rel="shortcut icon" type="image/x-icon" href="<%= url('css/flav.ico') %>">			
 
-          </ul>
+      <meta name="language" content="de" />
+      <meta name="subject" content="Site subject here" />
+      <meta name="robots" content="All" />
+      <meta name="robots" content="index,follow" />
+      <meta name="copyright" content="Globale Freiheit" />
+      <meta name="abstract" content="Globale Freiheit für alle Menschen auf der Welt" />
+      <meta name="MSSmartTagsPreventParsing" content="true" />
+
+
+      <link id="theme" rel="stylesheet" type="text/css" href="<%= url('css/style.css') %>" title="theme" />
+      <link rel="shortcut icon" type="image/x-icon" href="<%= url('css/flav.ico') %>">
+  	<script type="text/javascript" language="javascript" src="<%= url('js/addon.js') %>"></script>
+  	<script type="text/javascript" language="javascript" src="<%= url('js/custom.js') %>"></script>
+  	<script type="text/javascript" language="javascript" src="<%= url('js/main.js') %>"></script>
+    </head>
+    <body> 
+  	<div class="header-content">
+  	<a href="/"><img src="<%= url('images/css/topBanner.jpg')%>" id="logo"></a>
+      	
+  		<ul class="navi">
+  			<li><a href="<%= url('willkommen')%>"> WILLKOMMEN</a></li>
+  			<li><a href="<%= url('videos')%>">VIDEOS</a></li>
+  			<li><a href="<%= url('musik')%>">MUSIK</a></li>
+  			<li><a href="<%= url('rubriken')%>">RUBRIKEN</a></li>
+  		</ul>
+  		</div>
+  		
+         <div id="topSlideshowWrapper"> 
+          <div id="sliderContainer">
+          <!-- anfang kopiern bannershow -->
+          
+              <%= 
+                @slider if @slider 
+              %>
+          <!-- end kopiern bannershow -->
+          </div><!-- end sliderContainer -->
+         </div><!-- end topSlideshowWrapper --> 
+      </div>  <!-- end top wrapper -->  
+        
+      <div id="wrapper"> 
+        <div id="container"> 
+          <!--  content -->  
+          <div id="content" style="margin-top:20px;">
+          	  
+           <%= yield%>    
+          	
+     <div class="clear" style="height:40px"></div> 
+        </div> <!-- end container --> 
+      </div> <!-- end wrapper -->  
+      <div id="bottomWrapper"> 
+        <div id="footer"> 
+            
+          <div class="footer-one-third" style="text-align: left; float:left"> 
+         
+            <ul>   
+            <br>
+   <li>
+            <a href="<%= url('autoren') %>" shape="rect" ><b><font color="#00FFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alle 	
+  			</font> 	<span style="font-size: 16pt"><font color="#00FFFF"> AUTOREN</font></span></b></a>
+              </li> <br> <br> 
+              
+              
+              <li> <a href="<%= url('rubriken')%>" target="_blank" shape="rect"> <b>
+  			<font color="#CC0000">
+                    <span style="font-size: 16pt"> RUBRIKEN</span></font></b> </a>
+                        
+                        
+                <a href="<%= url('books') %>" shape="rect"> <b><font color="#FFFF00">
+                       <span style="font-size: 20pt">&nbsp;&nbsp;&nbsp; B&#220;CHER</span></font></b> </a>
+              </li><br><br>
+              
+              
+                 <li>
+                <a href="<%= url('links') %>" shape="rect"><b> 
+  				<font color="#66FF66" style="font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LINKS</font></b></a>  
+              </li>
+              
+
+            </ul>
+             
+          </div>
+            
+       
+    <div class="footer-one-third footer-last" style="text-align: right; float:right"> 
+
+            <ul>
+            
+            <br>
+
+            <li>
+            <a href="<%= url('veranstaltungen') %>" shape="rect" > 
+  		        <b>	<font color="#FF00FF">
+                    <span style="font-size: 16pt"> EVENTS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span>
+              </b>
+            </a>
+            </li> <br> <br> 
+              
+            <li><a href="<%= url('partner') %>" shape="rect"> <b>
+  				    <font color="#FFFF00" >
+                <span style=" font-size: 20pt"> PARTNER</font></span></b></a>  
+                  <a href="<%= url('commu') %>" shape="rect"> <b>
+  				      <font color="#FF9900" >
+                    <span style=" font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMUNITY</font></span></b></a>  
+              </li><br><br>
+              
+                  <li>
+                 <a href="<%= url('bitcoins') %>" shape="rect"> <b>
+  			<font color="#6699FF">
+                    <span style="font-size: 14pt">BITCOINS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span></b></a>
+  			</li>    
+              
+              
+              
            
+
+    
+              </ul>      
+         </div> 
+         
+
+     
+         <!-- end Footer -->   
         </div>
           
-     
-  <div class="footer-one-third footer-last" style="text-align: right; float:right"> 
-
-          <ul>
-          
-          <br>
-          <li>
-         
-          <a href="<%= url('veranstaltungen') %>" shape="rect" > 
-		<b>	<font color="#FF00FF">
-                  <span style="font-size: 16pt"> EVENTS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></b></a>
-            </li> <br> <br> 
-            
-             <li><a href="<%= url('partner') %>" shape="rect"> <b>
-				<font color="#FFFF00" >
-                  <span style=" font-size: 20pt"> PARTNER</font></span></b></a>  
-				
-             <a href="<%= url('commu') %>" shape="rect"> <b>
-				<font color="#FF9900" >
-                  <span style=" font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMUNITY</font></span></b></a>  
-            </li><br><br>
-            
-                <li>
-               <a href="<%= url('bitcoins') %>" shape="rect"> <b>
-			<font color="#6699FF">
-                  <span style="font-size: 14pt">BITCOINS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span></b></a>
-			</li>    
-            
-            
-            
-         
-
-  
-            </ul>      
-       </div> 
-       
-
-   
-       <!-- end Footer -->   
-      </div>
-        
-      <div id="bottom-links"> 
-        <div style="padding-top:20px"> 
-           <p align="center"> 
-           <a href="<%= url('impressum') %>" shape="rect"> Impressum </a>
-           <strong><b>&copy;</b></strong>
-           <a href="<%= url('impressum') %>" shape="rect"> Globale Freiheit </a>
-           <a href="<%= url('feed/') %>" rel='alternate' type="application/rss+xml" shape="rect"> RSS </a>
-           <link rel="alternate" type="application/rss+xml" href="<%= url('feed/') %>" title="Your title">
-        </div> 
-      </div>
-     <!-- end Bottom -->  
-    </div> 
-    
-        	
- </body>
+        <div id="bottom-links"> 
+          <div style="padding-top:20px"> 
+             <p align="center"> 
+             <a href="<%= url('impressum') %>" shape="rect"> Impressum </a>
+             <strong><b>&copy;</b></strong>
+             <a href="<%= url('impressum') %>" shape="rect"> Globale Freiheit </a>
+             <a href="<%= url('feed/') %>" rel='alternate' type="application/rss+xml" shape="rect"> RSS </a>
+             <link rel="alternate" type="application/rss+xml" href="<%= url('feed/') %>" title="Your title">
+          </div> 
+        </div>
+       <!-- end Bottom -->  
+      </div> 
+      
+          	
+   </body>
+</html>
