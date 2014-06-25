@@ -109,7 +109,7 @@ end
 
 #rss feed
 
-get '/rss.xml' do
+get '/feed/' do
   @articles =  Article.last(21).reverse!
   link = "http://www.globalefreiheit.de/"
   builder do |xml|
