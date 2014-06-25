@@ -4,3 +4,5 @@ config/db.rb
 *.png
 *.sql
 *.txt
+*.log
+*.lock
