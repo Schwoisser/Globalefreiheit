@@ -14,27 +14,8 @@ set :port, 80
 
 
 configure do
- 
  #sinatra activerecord does the db connection for us
- 
-#  dbconfig = YAML::load(File.open('config/database.yml'))
-#  puts dbconfig
-#  ActiveRecord::Base.establish_connection(dbconfig["production"])
- #   enable :logging
- #   set :dump_errors, false
-#    Dir.mkdir('log') unless File.exist?('log')
-
-#    $logger = Logger.new('log/production.log','weekly')
-#    $logger.level = Logger::WARN
-
-    # Spit stdout and stderr to a file during production
-    # in case something goes wrong
-#    $stdout.reopen("log/production.log", "w")
-#    $stdout.sync = true
-#    $stderr.reopen($stdout)
 end
-
-
 
 get '/' do
   @article =  Article.last(7).reverse!
@@ -57,11 +38,13 @@ end
 get '/article/:id' do
   @article = Article.find_by_id(params[:id])
   @slider = @article.slider
+
   erb :article #, (request.xhr? ? false : :layout) #just return the article without layout when its an ajax request
 end
 
 get '/author/:author_id' do
  @article = Article.where(author: params[:author_id]).order(title: :asc)
+
  erb :index
 end
 
@@ -71,12 +54,15 @@ get '/rubriken/:rubrik_id' do
                                  inner join article_rubriks on articles.id = article_rubriks.a_id 
                                  and article_rubriks.r_id = #{rubrik_id};
                                 ")
+
  @slider = erb :slider, :layout => false
+
  erb :index
 end
 
 get '/rubriken' do
  @rubriken = Rubrik.all.order(:name)
+
  erb :rubriken
 end
 
@@ -90,6 +76,7 @@ end
 
 get '/autoren' do
   @authors = Author.all.order(:name)
+  
   erb :autoren
 end
 
