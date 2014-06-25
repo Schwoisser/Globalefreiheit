@@ -47,7 +47,7 @@ end
 
 get '/rubriken/:rubrik_id' do
  rubrik_id = params[:rubrik_id].to_i
- @article = Article.rubrik rubrik_id
+ @article = Article.all_for_rubrik rubrik_id
 
  @slider = erb :slider, :layout => false
 
