@@ -3,7 +3,7 @@
 <ul id="slider1Content">
 <% @article.each do |article|%>
   <li class="slider1Image"> 
-    <a href="<%= url("article/"+article.title) %>" title="" target="_blank" shape="rect"> 
+    <a href="<%= url("article/"+article.id.to_s) %>" title="" target="_blank" shape="rect"> 
       <img src="<%= url("slider/"+article.image) %>" />  
       <span class="bottom" style="display: inline;">
       </span> 

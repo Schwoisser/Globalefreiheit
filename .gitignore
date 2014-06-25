@@ -1,0 +1,4 @@
+*.jpg
+config/database.yml
+config/db.rb
+*.png

@@ -1,25 +1,37 @@
 #!/usr/bin/env ruby 
 require 'sinatra'
-require 'protected_attributes'
-require "active_record"
-require "sinatra/activerecord"
-
+require 'active_record'
+require 'sinatra/activerecord'
 require './models/article'
 require './models/author'
 require './models/rubrik'
 require './models/article_rubrik'
 
+#config_file 'config/database.yml'
+
 set :environment, :production
 set :port, 80
 
+
 configure do
-  ActiveRecord::Base.establish_connection(
-    :adapter  => "mysql2",
-    :host     => "localhost",
-    :username => "test",
-    :password => "test",
-    :database => "Globalefreiheit"
-  )
+ 
+ #sinatra activerecord does the db connection for us
+ 
+#  dbconfig = YAML::load(File.open('config/database.yml'))
+#  puts dbconfig
+#  ActiveRecord::Base.establish_connection(dbconfig["production"])
+ #   enable :logging
+ #   set :dump_errors, false
+#    Dir.mkdir('log') unless File.exist?('log')
+
+#    $logger = Logger.new('log/production.log','weekly')
+#    $logger.level = Logger::WARN
+
+    # Spit stdout and stderr to a file during production
+    # in case something goes wrong
+#    $stdout.reopen("log/production.log", "w")
+#    $stdout.sync = true
+#    $stderr.reopen($stdout)
 end
 
 
@@ -45,8 +57,8 @@ get '/page/:page' do
   erb :index
 end
 
-get '/article/:title' do
-  @article = Article.find_by_title(params[:title])
+get '/article/:id' do
+  @article = Article.find_by_id(params[:id])
   @slider = @article.slider
   erb :article #, (request.xhr? ? false : :layout) #just return the article without layout when its an ajax request
 end
@@ -118,5 +130,10 @@ get '/books' do
   erb :books
 end
 
+after do
+  # Close the connection after the request is done so that we don't
+  # deplete the ActiveRecord connection pool.
+  ActiveRecord::Base.connection.close
+end
 
 
