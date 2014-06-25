@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# -*- coding: undecided -*-
 require 'sinatra'
 require 'active_record'
 require 'sinatra/activerecord'
@@ -8,7 +7,6 @@ require './models/author'
 require './models/rubrik'
 require './models/article_rubrik'
 
-#config_file 'config/database.yml'
 
 set :environment, :production
 set :port, 80
@@ -127,7 +125,7 @@ get '/books' do
   erb :books
 end
 
-#rss
+#rss feed
 
 get '/rss.xml' do
   @articles =  Article.last(21).reverse!
