@@ -288,15 +288,15 @@ h3 {
 }
 
 
-/*a:link, a:visited {
+a:link, a:visited {
 	color:#505050;
 	text-decoration:none;
-}*/
+}
 
 
-/*a:hover {
+a:hover {
 	text-decoration:underline;
-}*/
+}
 
 	
 					
@@ -398,6 +398,12 @@ a img {
 	width: 0;
 	height: 0;
 }
+
+.feed {
+  margin-left: 3px;
+  padding: 0 0 0 19px;
+  background: url("../images/feed-icon-14x14.png") no-repeat 0 50%;
+} 
 
 
 /* ************************************************************************* article *****************************************************************************/
