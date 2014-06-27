@@ -35,8 +35,11 @@ end
 get '/article/:id' do
   @article = Article.find_by_id(params[:id])
   @slider = @article.slider
-
-  erb :article #, (request.xhr? ? false : :layout) #just return the article without layout when its an ajax request
+  @rubriks = []
+  article_rubriks = @article.rubriks
+  @rubriks =  article_rubriks if article_rubriks
+  puts @rubriks
+  erb :article #,:layout => (request.xhr? ? false : :layout) #just return the article without layout when its an ajax request
 end
 
 get '/author/:author_id' do
@@ -119,7 +122,6 @@ get '/feed/' do
       xml.title "Globalefreiheit"
         xml.description "für alle Menschen auf der Welt"
         xml.link link
-
         @articles.each do |post|
           xml.item do
             xml.title post.title
@@ -133,7 +135,6 @@ get '/feed/' do
     end
   end
 end
-
 
 after do
   # Close the connection after the request is done so that we don't

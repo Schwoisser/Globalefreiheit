@@ -1,5 +1,10 @@
 class Article < ActiveRecord::Base
+  
   self.primary_key = 'id'
+  has_and_belongs_to_many :rubriks,
+        foreign_key: "a_id",
+        join_table:  "article_rubriks",
+        association_foreign_key: "r_id"
 
   def self.page(nr)
     article = last

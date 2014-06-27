@@ -1,8 +1,16 @@
 <p style="font-size: 18px; "><%=@article.title%></p>
-<p><a href="/author/<%=@article.author%>"><%=@article.author_name%></a></p>
-<%=@article.text%>
+	<p><a href="/author/<%=@article.author%>"><%=@article.author_name%></a> 
 
-<a href="/" shape="rect">
+		</p>
+		<%=@article.text%>
+
+
+	<p><i>	Rubriken:
+		<% @rubriks.each do |rubrik|%>
+			<a href="/rubriken/<%=rubrik.id if rubrik.id%>"><%=rubrik.name%></a>
+		<%end%>
+	</i></p>
+	<a href="/" shape="rect">
 <font color="#FF0000" face="Segoe Script" size="3"> ... zurückblättern</font></a></li>
 
 
