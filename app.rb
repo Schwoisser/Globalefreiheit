@@ -105,6 +105,10 @@ get '/musik' do
   erb :musik
 end
 
+get '/faq' do
+  erb :faq
+end
+
 get '/books' do
    @slider = erb :books_slider, :layout => false
   erb :books
