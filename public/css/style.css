@@ -232,6 +232,7 @@ body {
 
 #content a:link, #content a:visited {
 	color:#505050;
+	text-decoration: none;
 	font-weight:bold;
 }
 
@@ -318,7 +319,6 @@ a:hover {
 }
 
 
-
 #bottomWrapper a:hover{
 	color:#cdb380;
 	text-decoration:none;
@@ -388,6 +388,8 @@ a img {
 } 
 
 
+
+
 .clear {
 	clear: both;
 	display: block;
@@ -397,36 +399,29 @@ a img {
 	height: 0;
 }
 
+.feed {
+  margin-left: 3px;
+  padding: 0 0 0 19px;
+  background: url("../images/feed-icon-14x14.png") no-repeat 0 50%;
+} 
 
-/* ************************************************************************* aktuelles 1 *****************************************************************************/
 
-#aktuelles1 {
+/* ************************************************************************* article *****************************************************************************/
+
+.article {
 	width: 100%;
+	margin: 5px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+    border-bottom-color: #ccc;
 	}
 	
-#aktuelles1 li a {
-	height: 100%;
-	margin: 10px;
-  	voice-family: "\"}\""; 
-  	voice-family: inherit;
-  	height: 100%;
-	text-decoration: none;
-}	
-	
-#aktuelles1 li a:link, #aktuelles1 li a:visited {
-	color: #666;
-	display: block;
-	background:  url(/images/slider/1_small.jpg) no-repeat;
-	padding: 0px 0 0 200px;
-}
-	
-#aktuelles1 li a:hover {
+.article li a:hover {
 	color: #000;
 	height: 300px;
-	background:  url(/images/slider/1_small.jpg) no-repeat;
 	padding: 0px 0 0 200px;
 }
-#aktuelles1 ul {
+.article ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;

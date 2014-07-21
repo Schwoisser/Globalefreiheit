@@ -21,6 +21,7 @@ GEM
     json (1.8.1)
     minitest (5.3.5)
     multi_json (1.10.1)
+    mysql2 (0.3.16)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -49,6 +50,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
+  mysql2
   sinatra
   sinatra-activerecord
   sinatra-contrib

@@ -1,7 +1,7 @@
 #required for railshoster deployment
 # config.ru
 require 'sinatra'
-require './test'
+require './app'
 require 'rubygems'
 require 'bundler'
 

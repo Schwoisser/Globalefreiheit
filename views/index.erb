@@ -1,45 +1,54 @@
-<script type="text/javascript" language="javascript" src="<%= url('js/main.js') %>"></script>
-<div id="output">
-	<% @article.each do |article|%>
-		<div id=<%=article.title %>>
-		  <ul>
-		  
-		      <a class="link" onclick="load_article('<%="/article/"+article.id.to_s %>');" href="<%="/article/"+article.id.to_s %>" title="<%article.title%>">
-			<font style="float:left;" size="3"><%=article.title %> </font><br><br>
-			<div style="font-weight: 400"><i>von <%=article.author_name%></i><br><br>&nbsp;
-			<img style="float:left; margin:10px 20px 0 0;" src="<%= url("slider/"+article.preview_image) %>">
+	<script type="text/javascript" language="javascript" src="<%= url('js/main.js') %>"></script>
+	<div id="output">
+		<% @article.each do |article|%>
+		<br>
+			<div class="article" id=<%=article.title %>>
+			  <ul>
+			  
+			    <a href="<%="/article/"+article.id.to_s %>" title="<%article.title%>">
+					<font style="float:left;" size="4"><%=article.title %> </font>
+
+				</a><br><br>
+
+				<div style="font-weight: 400">
+					<a href="<%="/author/"+article.author.to_s %>" title="<%article.author%>"> 
+						<i>von <%=article.author_name%></i> 
+					</a><br><br>&nbsp;
+				<a href="<%="/article/"+article.id.to_s %>" title="<%article.title%>">
+					<img style="float:left; margin:10px 20px 0 0;" src="<%= url("slider/"+article.preview_image) %>">
+				</a>
 					<p>
-					<%=article.description %>
+						<%=article.description %>
 					</p>
-					</div>
-					</a>
-			 
-			</ul>
-		</div><br><br><br>&nbsp;	
+				</div>
+				
+				 
+				</ul>
+				<br>&nbsp;   
+			</div>
+		<% end %>
+	</div>
+	<ul style="list-style:none inside none; text-transform:uppercase;margin:0;padding:0;">
+		<li style="width:250px; float:left; margin-right:90px ;">
+	        	<p align="left" style="text-align: left">
+			<span style="text-transform: none"><a href="<%= if @page_nr
+										url("page/"+(@page_nr+1).to_s)
+									else
+										url("page/1")
+									end
+									%>" shape="rect">
+			<font size=3 font face="Segoe Script"font color="#FF0000"></font></a></span></p>
+			</li>
 	              
-	<% end %>
-</div>
-<ul style="list-style:none inside none; text-transform:uppercase;margin:0;padding:0;">
-	<li style="width:250px; float:left; margin-right:90px ;">
-        	<p align="left" style="text-align: left">
-		<span style="text-transform: none"><a href="<%= if @page_nr
-									url("page/"+(@page_nr+1).to_s)
-								else
-									url("page/1")
-								end
-								%>" shape="rect">
-		<font size=3 font face="Segoe Script"font color="#FF0000"></font></a></span></p>
-		</li>
-              
-                <li style="width:250px; float:right;">
-		<p align="right" style="text-align: right"><strong>
-		<span style="text-transform: none"><a href="<%= if @page_nr
-									url("page/"+(@page_nr+1).to_s)
-								else
-									url("page/1")
-								end
-								
-								%>" shape="rect" >
-		<font size=3 face="Segoe Script" color="#FF0000">Archivseite ...</font></a></span>	</p>    
-                </li>
-</ul>
+	        <li style="width:250px; float:right;">
+			<p align="right" style="text-align: right"><strong>
+			<span style="text-transform: none"><a href="<%= if @page_nr
+										url("page/"+(@page_nr+1).to_s)
+									else
+										url("page/1")
+									end
+									
+									%>" shape="rect" >
+			<font size=3 face="Segoe Script" color="#FF0000">Ältere Artikel >></font></a></span>	</p>    
+	                </li>
+	</ul>
