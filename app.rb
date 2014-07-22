@@ -73,7 +73,7 @@ get '/rubriken' do
  erb :rubriken
 end
 
-get '/willkommen' do
+get '/podcasts' do
   @image = "hallo.jpg"
   @slider = erb :single_slider, :layout => false
 
