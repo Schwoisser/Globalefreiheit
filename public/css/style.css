@@ -45,7 +45,8 @@ body {
 	padding:25px;
 	display:block;
 	font-weight:bold;
-	font-family:impact;
+/*	font-family:impact;*/
+	font-family: 'Trebuchet MS', sans-serif;
 }
 
 .navi li a:hover{
