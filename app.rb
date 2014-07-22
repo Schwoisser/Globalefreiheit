@@ -19,6 +19,7 @@ end
 
 get '/' do
   @article =  Article.last(7).reverse!
+  @older_article_link = true
   @slider = erb :slider, :layout => false
   erb :index
 end
@@ -26,7 +27,7 @@ end
 get '/page/:page' do
   @page_nr = params[:page].to_i
   @article = Article.page @page_nr
-
+  @older_article_link = true
   @slider = erb :slider, :layout => false
 
   erb :index
@@ -38,27 +39,36 @@ get '/article/:id' do
   @rubriks = []
   article_rubriks = @article.rubriks
   @rubriks =  article_rubriks if article_rubriks
-  puts @rubriks
+  
   erb :article #,:layout => (request.xhr? ? false : :layout) #just return the article without layout when its an ajax request
 end
 
 get '/author/:author_id' do
- @article = Article.where(author: params[:author_id]).order(title: :asc)
 
+ 
+
+ author_id = params[:author_id].to_i
+ @older_article_link = false
+ @article = Article.where(author: author_id).order(title: :asc)
+ @slider = erb :slider, :layout => false
  erb :index
 end
 
 get '/rubriken/:rubrik_id' do
+
+
  rubrik_id = params[:rubrik_id].to_i
  @article = Article.all_for_rubrik rubrik_id
-
+ @older_article_link = false
  @slider = erb :slider, :layout => false
 
  erb :index
 end
 
 get '/rubriken' do
- @rubriken = Rubrik.all.order(:name)
+  @image = "8.jpg"
+  @slider = erb :single_slider, :layout => false
+  @rubriken = Rubrik.all.order(:name)
 
  erb :rubriken
 end
@@ -71,7 +81,7 @@ get '/willkommen' do
 end
 
 get '/links' do
-  @image = "earthslides.jpg"
+  @image = "earthlights.jpg"
   @slider = erb :single_slider, :layout => false
 
   erb :links
