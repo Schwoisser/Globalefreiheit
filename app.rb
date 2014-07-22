@@ -10,7 +10,7 @@ require './models/article_rubrik'
 
 
 set :environment, :production
-set :port, 80
+#set :port, 80
 
 
 configure do
