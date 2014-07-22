@@ -64,48 +64,75 @@ get '/rubriken' do
 end
 
 get '/willkommen' do
+  @image = "hallo.jpg"
+  @slider = erb :single_slider, :layout => false
+
   erb :willkommen
 end
 
 get '/links' do
+  @image = "earth_slides.jpg"
+  @slider = erb :single_slider, :layout => false
+
   erb :links
 end
 
 get '/autoren' do
+  @image = "helden.jpg"
+  @slider = erb :single_slider, :layout => false
+
   @authors = Author.all.order(:name)
 
   erb :autoren
 end
 
 get '/partner' do
+  @image = "11.jpg"
+  @slider = erb :single_slider, :layout => false
   erb :partner
 end
 
 get '/veranstaltungen' do
+  @image = "23.jpg"
+  @slider = erb :single_slider, :layout => false
   erb :veranstaltungen
 end
 
 get '/commu' do
+  @image = "45.jpg"
+  @slider = erb :single_slider, :layout => false
   erb :commu
 end
 
 get '/bitcoins' do
+  @image = "33.jpg"
+  @slider = erb :single_slider, :layout => false
   erb :bitcoins
 end
 
 get '/impressum' do
+  @image = "hallo.jpg"
+  @slider = erb :single_slider, :layout => false
   erb :impressum
 end
 
 get '/videos' do
+  @image = "6.jpg"
+  @slider = erb :single_slider, :layout => false
+
   erb :videos
 end
 
 get '/musik' do
+  @image = "55.jpg"
+  @slider = erb :single_slider, :layout => false
+
   erb :musik
 end
 
 get '/faq' do
+  @image = "202.jpg"
+  @slider = erb :single_slider, :layout => false
   erb :faq
 end
 
