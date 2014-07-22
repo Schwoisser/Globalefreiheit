@@ -1,6 +1,8 @@
 *.jpg
 config/database.yml
 config/db.rb
+Gemfile.lock
+Gemfile
 *.png
 *.sql
 *.txt
