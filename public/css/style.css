@@ -42,9 +42,10 @@ body {
 .navi li a{
 	font-size:23px;
 	color:#000066;
-	padding:20px;
+	padding:25px;
 	display:block;
 	font-weight:bold;
+	font-family:impact;
 }
 
 .navi li a:hover{
