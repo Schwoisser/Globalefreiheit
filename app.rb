@@ -71,7 +71,7 @@ get '/willkommen' do
 end
 
 get '/links' do
-  @image = "earth_slides.jpg"
+  @image = "earthslides.jpg"
   @slider = erb :single_slider, :layout => false
 
   erb :links
