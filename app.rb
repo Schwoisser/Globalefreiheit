@@ -117,7 +117,7 @@ get '/impressum' do
 end
 
 get '/videos' do
-  @image = "6.jpg"
+  @image = "262.jpg"
   @slider = erb :single_slider, :layout => false
 
   erb :videos
