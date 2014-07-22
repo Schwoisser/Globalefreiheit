@@ -77,7 +77,7 @@ get '/podcasts' do
   @image = "hallo.jpg"
   @slider = erb :single_slider, :layout => false
 
-  erb :willkommen
+  erb :podcasts
 end
 
 get '/links' do

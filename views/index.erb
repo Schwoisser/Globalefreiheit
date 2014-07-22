@@ -58,4 +58,8 @@
 			<font size=3 face="Segoe Script" color="#FF0000">Ältere Artikel</font></a></span>	</p>    
 	                </li>
 	</ul>
-	<%end%>
+
+<% unless @older_article_link %>
+	<a href="/" shape="rect">
+	<font color="#FF0000" face="Segoe Script" size="3"> ... zurückblättern</font></a></li>
+<%end%>
