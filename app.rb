@@ -151,7 +151,7 @@ get '/books' do
   erb :books
 end
 
-not_found do
+get "/index.php" do
   redirect to('/')
 end
 
