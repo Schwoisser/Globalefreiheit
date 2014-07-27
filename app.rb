@@ -151,6 +151,11 @@ get '/books' do
   erb :books
 end
 
+not_found do
+  redirect to('/')
+end
+
+
 #rss feed
 
 get '/feed/' do
