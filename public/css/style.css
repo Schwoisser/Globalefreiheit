@@ -275,6 +275,16 @@ p#you_tube-deutsch{
 p#you_tube-english{
 	text-align: center;
 }
+
+li.verweiseyoutube{
+	width:250px; 
+	float:left; 
+	margin-right:90px;
+	font-size:3;
+	font-family:Segoe Script;
+	color:#000066;
+	}
+
 h1 {
 	color:#000000;
 	margin:20px 0 10px 0;
@@ -436,4 +446,3 @@ a img {
 }  
 
 /* ***************************************************************************** ENDE  ******************************************************************/
-li.verweiseyoutube{width:250px; float:left; margin-right:90px;}
