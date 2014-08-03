@@ -412,8 +412,8 @@ a img {
 /* ************************************************************************* youtube links list *****************************************************************************/
 #spaltencontainer 
 {
-width:			770px; 
-margin: 		10px auto; 
+width:			900px; 
+ 
 }
 
 .spalte
@@ -425,7 +425,7 @@ margin:		0;
 text-align:left;
 }
 
-a.youtubeverweise{
+a:link.youtubeverweise{
 font-size:0.9em;
 font-family:Segoe Script;
 color:#000066; 
