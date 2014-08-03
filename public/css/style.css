@@ -6,13 +6,7 @@ html {
 }
 
 
-body {
-	padding:0;
-	margin :0;
-	display:table; 
-	width:100%;
-	background-color:#FFFFFF;	
-}
+
 
 .header-content{
 	overflow:hidden;
@@ -262,14 +256,25 @@ body {
 	font-style: normal;
 	font-weight: normal;
 	text-transform: normal;
-}
+	padding:0;
+	margin :0;
+	display:table; 
+	width:100%;
+	background-color:#FFFFFF;	
+}	
 
 p {
 	letter-spacing: normal;
 	line-height: 1.7em;
 }
 
+p#you_tube-deutsch{
+	text-align: left;
+}
 
+p#you_tube-english{
+	text-align: center;
+}
 h1 {
 	color:#000000;
 	margin:20px 0 10px 0;
@@ -431,3 +436,4 @@ a img {
 }  
 
 /* ***************************************************************************** ENDE  ******************************************************************/
+li.spaltelinks{width:250px; float:left; margin-right:90px;}
