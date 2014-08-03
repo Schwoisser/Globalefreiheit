@@ -268,19 +268,7 @@ p {
 	line-height: 1.7em;
 }
 
-p#you_tube-deutsch{
-	text-align: left;
-}
 
-p#you_tube-english{
-	text-align: center;
-}
-
-li.verweiseyoutube{
-	width:250px; 
-	float:left; 
-	margin-right:90px;
-	}
 
 h1 {
 	color:#000000;
@@ -420,6 +408,33 @@ a img {
   background: url("../images/feed-icon-14x14.png") no-repeat 0 50%;
 } 
 
+
+/* ************************************************************************* youtube links list *****************************************************************************/
+#spaltencontainer 
+{
+width:			770px; 
+margin: 		10px auto; 
+}
+
+.spalte
+{
+width:		300px; 
+padding: 	0 50px 0 0; 
+float:		left;
+margin:		0;
+
+}
+
+a.youtubeverweise{
+font-size:0.9em;
+font-family:Segoe Script;
+color:#000066; 
+}
+
+li
+{list-style: none;
+  line-height:1.5em;
+}
 
 /* ************************************************************************* article *****************************************************************************/
 
