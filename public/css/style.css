@@ -422,7 +422,7 @@ width:		300px;
 padding: 	0 50px 0 0; 
 float:		left;
 margin:		0;
-
+text-align:left;
 }
 
 a.youtubeverweise{
@@ -434,7 +434,6 @@ color:#000066;
 li
 {list-style: none;
   line-height:1.5em;
-  float:left;
 }
 
 /* ************************************************************************* article *****************************************************************************/
