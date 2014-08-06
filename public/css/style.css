@@ -6,13 +6,7 @@ html {
 }
 
 
-body {
-	padding:0;
-	margin :0;
-	display:table; 
-	width:100%;
-	background-color:#FFFFFF;	
-}
+
 
 .header-content{
 	overflow:hidden;
@@ -262,12 +256,18 @@ body {
 	font-style: normal;
 	font-weight: normal;
 	text-transform: normal;
-}
+	padding:0;
+	margin :0;
+	display:table; 
+	width:100%;
+	background-color:#FFFFFF;	
+}	
 
 p {
 	letter-spacing: normal;
 	line-height: 1.7em;
 }
+
 
 
 h1 {
@@ -408,6 +408,33 @@ a img {
   background: url("../images/feed-icon-14x14.png") no-repeat 0 50%;
 } 
 
+
+/* ************************************************************************* youtube links list *****************************************************************************/
+#spaltencontainer 
+{
+width:			900px; 
+margin:10px;
+}
+
+.spalte
+{
+width:		300px; 
+padding: 	0 50px 0 0; 
+float:		left;
+margin:		0 0 0 20px;
+text-align:left;
+}
+
+.youtubeverweise a{
+font-size:0.9em;
+font-family:Segoe Script;
+color:#000066; 
+}
+
+li
+{list-style: none;
+  line-height:1.5em;
+}
 
 /* ************************************************************************* article *****************************************************************************/
 
