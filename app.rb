@@ -108,6 +108,12 @@ get '/veranstaltungen' do
   erb :veranstaltungen
 end
 
+get '/veranstaltungen.htm' do
+  @image = "23.jpg"
+  @slider = erb :single_slider, :layout => false
+  erb :veranstaltungen
+end
+
 get '/commu' do
   @image = "45.jpg"
   @slider = erb :single_slider, :layout => false
