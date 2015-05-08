@@ -10,7 +10,7 @@ require './models/article_rubrik'
 require './models/book'
 
 
-set :environment, :development
+set :environment, :production
 #set :port, 80
 
 
