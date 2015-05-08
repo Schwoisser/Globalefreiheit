@@ -7,6 +7,7 @@ require './models/article'
 require './models/author'
 require './models/rubrik'
 require './models/article_rubrik'
+require './models/book'
 
 
 set :environment, :development
