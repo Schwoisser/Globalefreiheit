@@ -1,4 +1,4 @@
-class Article < ActiveRecord::Base
+class Book < ActiveRecord::Base
   
   self.primary_key = 'id'
 
