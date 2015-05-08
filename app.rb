@@ -153,6 +153,7 @@ get '/faq' do
 end
 
 get '/books' do
+   @books = Books.all
    @slider = erb :books_slider, :layout => false
   erb :books
 end
