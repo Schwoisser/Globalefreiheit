@@ -9,7 +9,7 @@ require './models/rubrik'
 require './models/article_rubrik'
 
 
-set :environment, :production
+#set :environment, :production
 #set :port, 80
 
 
