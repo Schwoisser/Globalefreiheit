@@ -154,7 +154,7 @@ get '/faq' do
 end
 
 get '/books' do
-   @books = Book.all.order(:title)
+   @books = Book.all.order(:author)
    @slider = erb :books_slider, :layout => false
   erb :books
 end
